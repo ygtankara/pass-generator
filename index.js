@@ -3,22 +3,32 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 
 let btn = document.querySelector("button");
 let first = document.getElementById("first");
-let second= document.getElementById("second");
+let second = document.getElementById("second");
 
 let passLength = 16
+let firstClick = true
 
-btn.addEventListener("click", function(){
+btn.addEventListener("click", function () {
+
+    if (firstClick) {
+
+        first.style.display = "flex";
+        second.style.display = "flex";
+
+        firstClick = false
+
+    }
 
     first.textContent = " "
     second.textContent = " "
 
-    for (i=0; i<passLength; i++) {
+    for (i = 0; i < passLength; i++) {
 
-        
-        let x = Math.floor(Math.random()*characters.length)
+
+        let x = Math.floor(Math.random() * characters.length)
         first.textContent += characters[x] /*first.textContent = first.textContent + characters[x]*/
         second.textContent += characters[x]
-        
+
     }
 });
 
