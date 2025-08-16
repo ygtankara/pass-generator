@@ -4,32 +4,42 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 let btn = document.querySelector("button");
 let first = document.getElementById("first");
 let second = document.getElementById("second");
+let inputLength = document.getElementById("inputLength");
 
-let passLength = 16
+let passLength
 let firstClick = true
+
+inputLength.addEventListener("input", function () {
+    passLength = inputLength.value;
+    console.log(passLength);
+})
 
 btn.addEventListener("click", function () {
 
-    if (firstClick) {
+    if (inputLength.value > 0 && inputLength.value <= 16) {
 
-        first.style.display = "flex";
-        second.style.display = "flex";
+        if (firstClick) {
 
-        firstClick = false
+            first.style.display = "flex";
+            second.style.display = "flex";
 
+            firstClick = false
+
+        }
+
+        first.textContent = " "
+        second.textContent = " "
+
+        for (i = 0; i < passLength; i++) {
+
+
+            let x = Math.floor(Math.random() * characters.length)
+            first.textContent += characters[x] /*first.textContent = first.textContent + characters[x]*/
+            second.textContent += characters[x]
+
+        }
     }
 
-    first.textContent = " "
-    second.textContent = " "
-
-    for (i = 0; i < passLength; i++) {
-
-
-        let x = Math.floor(Math.random() * characters.length)
-        first.textContent += characters[x] /*first.textContent = first.textContent + characters[x]*/
-        second.textContent += characters[x]
-
-    }
 });
 
 

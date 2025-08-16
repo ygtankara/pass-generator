@@ -71,3 +71,12 @@ h3 {
     margin: 0;
     margin-bottom: 48px;
 }
+
+input {
+    margin-top: 24px;
+    width: 120px;
+    height: 20px;
+    background-color: #ECFDF5;
+    border: .5px solid #37465b;
+    border-radius: 4px;
+}
