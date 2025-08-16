@@ -42,6 +42,11 @@ span{
     height: 40px;
     margin-right: 18px;
     border-radius: 5px;
+    color: #1edb9c;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fieldbox {
@@ -54,7 +59,7 @@ h1 {
     font-size: 40px;
     margin: 0;
     padding-bottom: 8px;
-    width: 350px;
+    width: 320px;
     line-height: 1;
 }
 
